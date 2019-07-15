@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:02,130
+Hello everyone. In this section,
+
+2
+00:00:02,130 --> 00:00:05,790
+we're going to be talking about differential privacy in the context of deep learning.
+
+3
+00:00:05,790 --> 00:00:08,864
+In this context, differential privacy is about ensuring
+
+4
+00:00:08,864 --> 00:00:12,060
+that when our neural networks are learning from sensitive data,
+
+5
+00:00:12,060 --> 00:00:14,565
+that they're only learning what they're supposed to learn from the data
+
+6
+00:00:14,565 --> 00:00:17,550
+without accidentally learning what they're not supposed to learn from the data.
+
+7
+00:00:17,550 --> 00:00:21,810
+Over this series of lessons and many projects which you'll be completing as we go,
+
+8
+00:00:21,810 --> 00:00:25,139
+we're going to walk through differential privacy from the early fundamentals
+
+9
+00:00:25,139 --> 00:00:26,910
+to one of the state-of-the-art methods for training
+
+10
+00:00:26,910 --> 00:00:28,920
+differentially private deep learning models.
+
+11
+00:00:28,920 --> 00:00:33,015
+The goal here is not just to give you an empirical ability to train a model using DP,
+
+12
+00:00:33,015 --> 00:00:36,140
+but also for you to understand the foundational principles of
+
+13
+00:00:36,140 --> 00:00:40,230
+differential privacy such as how noise is applied or how we define privacy.
+
+14
+00:00:40,230 --> 00:00:42,200
+What you want to be able to do with this is to be able to
+
+15
+00:00:42,200 --> 00:00:44,674
+speak intelligently about the subject to engineers,
+
+16
+00:00:44,674 --> 00:00:47,060
+scientists, and stakeholders and you want to be able to
+
+17
+00:00:47,060 --> 00:00:50,210
+continue to consume differential privacy research as it's produced.
+
+18
+00:00:50,210 --> 00:00:53,230
+That'll be the goal of this course. So let's jump in.
+

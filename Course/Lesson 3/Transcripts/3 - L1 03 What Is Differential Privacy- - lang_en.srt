@@ -1,0 +1,380 @@
+1
+00:00:00,000 --> 00:00:04,275
+In this lesson, we're going to discuss what differential privacy is at a high level.
+
+2
+00:00:04,275 --> 00:00:06,825
+Differential privacy is actually quite a new field.
+
+3
+00:00:06,825 --> 00:00:11,520
+It recently started with statistical database queries around 2003 and even more recently,
+
+4
+00:00:11,520 --> 00:00:14,085
+has been applied to contexts such as Machine Learning.
+
+5
+00:00:14,085 --> 00:00:16,740
+The general goal of differential privacy is to ensure that
+
+6
+00:00:16,740 --> 00:00:20,100
+different kinds of statistical analysis don't compromise privacy.
+
+7
+00:00:20,100 --> 00:00:22,125
+Now, when I say statistical analysis,
+
+8
+00:00:22,125 --> 00:00:24,330
+I mean it in the most general term of,
+
+9
+00:00:24,330 --> 00:00:26,700
+we have some training data or database or
+
+10
+00:00:26,700 --> 00:00:29,610
+just a dataset about individuals and we want to make sure that
+
+11
+00:00:29,610 --> 00:00:32,970
+our statistical analysis of that dataset does not compromise
+
+12
+00:00:32,970 --> 00:00:36,675
+the privacy of any particular individual contained within that dataset.
+
+13
+00:00:36,675 --> 00:00:39,150
+Now, in order to be able to accomplish this goal,
+
+14
+00:00:39,150 --> 00:00:42,270
+we first need to propose a robust definition of privacy.
+
+15
+00:00:42,270 --> 00:00:44,090
+If you think about privacy yourself and
+
+16
+00:00:44,090 --> 00:00:46,670
+perhaps conversations that you've had with people you
+
+17
+00:00:46,670 --> 00:00:51,079
+know or have listened to on a news since privacy is such a hot topic these days,
+
+18
+00:00:51,079 --> 00:00:53,345
+you might have heard a definition something like this.
+
+19
+00:00:53,345 --> 00:00:56,780
+Privacy is preserved if, after the analysis,
+
+20
+00:00:56,780 --> 00:00:59,705
+the analyzer doesn't know anything about the people in the dataset.
+
+21
+00:00:59,705 --> 00:01:01,970
+They remain "unobserved".
+
+22
+00:01:01,970 --> 00:01:04,970
+But if you think about this definition of privacy in the context of
+
+23
+00:01:04,970 --> 00:01:07,670
+your home and why you have blinds in the front door,
+
+24
+00:01:07,670 --> 00:01:12,790
+and all these things, it's to ensure that information about you doesn't leak at all.
+
+25
+00:01:12,790 --> 00:01:14,940
+However, in the context of statistics,
+
+26
+00:01:14,940 --> 00:01:17,600
+this is really insufficient and really in all cases of
+
+27
+00:01:17,600 --> 00:01:20,435
+Machine Learning because we're trying to learn something
+
+28
+00:01:20,435 --> 00:01:23,300
+about a dataset without learning specific things about
+
+29
+00:01:23,300 --> 00:01:26,930
+individuals which might be sensitive or might harm them in some way.
+
+30
+00:01:26,930 --> 00:01:29,570
+So what we really need is a better definition.
+
+31
+00:01:29,570 --> 00:01:33,790
+In 1977, a reasonable definition was proposed which was this,
+
+32
+00:01:33,790 --> 00:01:38,030
+"Anything that can be learned from a participant in a statistical database,
+
+33
+00:01:38,030 --> 00:01:40,505
+can be learned without access to the database".
+
+34
+00:01:40,505 --> 00:01:41,750
+Well with that definition,
+
+35
+00:01:41,750 --> 00:01:44,410
+that would mean that we had preserved individuals privacy.
+
+36
+00:01:44,410 --> 00:01:46,160
+Now, in the context of statistical analysis,
+
+37
+00:01:46,160 --> 00:01:47,750
+this definition is basically saying,
+
+38
+00:01:47,750 --> 00:01:53,480
+anything you actually do learn about a person should be only public information.
+
+39
+00:01:53,480 --> 00:01:55,140
+This definition is reasonable,
+
+40
+00:01:55,140 --> 00:01:57,260
+it's okay but the problem is,
+
+41
+00:01:57,260 --> 00:02:00,140
+that this is still insufficient for statistical analysis.
+
+42
+00:02:00,140 --> 00:02:03,560
+Imagine if we're trying to train a classifier to predict cancer in
+
+43
+00:02:03,560 --> 00:02:07,520
+CT scans but these CT scans haven't been published anywhere else.
+
+44
+00:02:07,520 --> 00:02:11,600
+So we train our deep neural network to learn how to classify cancer in a CT scan.
+
+45
+00:02:11,600 --> 00:02:14,840
+But we ask the question, does this classifier violate privacy?
+
+46
+00:02:14,840 --> 00:02:17,210
+Well, all the information that it learned came from
+
+47
+00:02:17,210 --> 00:02:20,300
+a private dataset which did not exist anywhere else.
+
+48
+00:02:20,300 --> 00:02:22,400
+Thus, according to this definition,
+
+49
+00:02:22,400 --> 00:02:26,200
+information from this private dataset was leaked even though we only leaked
+
+50
+00:02:26,200 --> 00:02:30,380
+information pertaining to the general classification of what tumors look like.
+
+51
+00:02:30,380 --> 00:02:34,910
+Furthermore, this definition of anything that can be learned about a participant from
+
+52
+00:02:34,910 --> 00:02:37,790
+a statistical database can be learned without access
+
+53
+00:02:37,790 --> 00:02:40,805
+to the database is nearly impossible to enforce.
+
+54
+00:02:40,805 --> 00:02:43,250
+How can we possibly know what facts in
+
+55
+00:02:43,250 --> 00:02:46,555
+a dataset are also available publicly somewhere else?
+
+56
+00:02:46,555 --> 00:02:49,820
+Finally, this definition assumes that information
+
+57
+00:02:49,820 --> 00:02:53,465
+which was been made public elsewhere isn't harmful to an individual.
+
+58
+00:02:53,465 --> 00:02:55,670
+Consider if it's been made slightly public,
+
+59
+00:02:55,670 --> 00:02:58,510
+maybe in some circles that an individual has a disease.
+
+60
+00:02:58,510 --> 00:03:00,650
+Clearly this does not mean that it's now our
+
+61
+00:03:00,650 --> 00:03:02,795
+right to continue to propagate this information.
+
+62
+00:03:02,795 --> 00:03:04,370
+So as you can see,
+
+63
+00:03:04,370 --> 00:03:06,410
+this definition fails for several reasons.
+
+64
+00:03:06,410 --> 00:03:09,290
+First, it prevents us from learning anything from private datasets,
+
+65
+00:03:09,290 --> 00:03:11,090
+defeating the purpose of using them at all,
+
+66
+00:03:11,090 --> 00:03:15,050
+while it also allows us to learn and propagate information just because it's already
+
+67
+00:03:15,050 --> 00:03:18,980
+public which is in the best case impossible to know and in the worst case,
+
+68
+00:03:18,980 --> 00:03:21,325
+harmful information to spread even further.
+
+69
+00:03:21,325 --> 00:03:24,230
+At a high level, this definition just doesn't
+
+70
+00:03:24,230 --> 00:03:27,260
+capture the protection that we want to have around individuals.
+
+71
+00:03:27,260 --> 00:03:29,375
+It doesn't capture the idea that we want.
+
+72
+00:03:29,375 --> 00:03:32,255
+In truth, we're not really trying to protect information,
+
+73
+00:03:32,255 --> 00:03:34,235
+we're trying to protect people, right?
+
+74
+00:03:34,235 --> 00:03:37,700
+So this leads to the modern definition by Cynthia Dwork who
+
+75
+00:03:37,700 --> 00:03:41,465
+is widely recognized as a pioneering figure in the field of differential privacy.
+
+76
+00:03:41,465 --> 00:03:45,500
+Perhaps if I can say so, she's the "Godfather" of differential privacy.
+
+77
+00:03:45,500 --> 00:03:48,580
+The intuitive definition she proposed goes like this,
+
+78
+00:03:48,580 --> 00:03:51,300
+"Differential privacy" describes a promise,
+
+79
+00:03:51,300 --> 00:03:52,680
+made by a data holder,
+
+80
+00:03:52,680 --> 00:03:54,840
+or curator, to a data subject,
+
+81
+00:03:54,840 --> 00:03:56,370
+and the promise is like this,
+
+82
+00:03:56,370 --> 00:03:59,330
+"You will not be affected, adversely or otherwise,
+
+83
+00:03:59,330 --> 00:04:02,180
+by allowing your data to be used in any study or analysis,
+
+84
+00:04:02,180 --> 00:04:04,400
+no matter what other studies, data sets,
+
+85
+00:04:04,400 --> 00:04:06,695
+or information sources, are available."
+
+86
+00:04:06,695 --> 00:04:08,030
+Which she describes in her book,
+
+87
+00:04:08,030 --> 00:04:10,730
+The Algorithmic Foundations of Differential Privacy.
+
+88
+00:04:10,730 --> 00:04:12,889
+I highly recommend reading this book,
+
+89
+00:04:12,889 --> 00:04:15,745
+as it is the general resource for differential privacy.
+
+90
+00:04:15,745 --> 00:04:17,730
+So as you can see here, this definition of
+
+91
+00:04:17,730 --> 00:04:20,510
+differential privacy is even broader than the previous one,
+
+92
+00:04:20,510 --> 00:04:23,180
+and obviously extremely challenging to fulfill.
+
+93
+00:04:23,180 --> 00:04:24,530
+But the true goal of the field of
+
+94
+00:04:24,530 --> 00:04:27,635
+differential privacy is to propose these tools and techniques
+
+95
+00:04:27,635 --> 00:04:32,810
+that allow a data holder to make these promises to individuals who are being studied.
+
