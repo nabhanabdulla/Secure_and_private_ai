@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:01,860
+In the previous two concepts,
+
+2
+00:00:01,860 --> 00:00:06,315
+we outlined a robust definition of privacy which was proposed by Cynthia Dwork.
+
+3
+00:00:06,315 --> 00:00:08,160
+In this concept, we're going to see what
+
+4
+00:00:08,160 --> 00:00:11,040
+our privacy definition means from a hands-on sense
+
+5
+00:00:11,040 --> 00:00:13,200
+when we're actually playing around with PyTorch or
+
+6
+00:00:13,200 --> 00:00:16,245
+Numpy or some statistical tool set or dataset.
+
+7
+00:00:16,245 --> 00:00:20,790
+In particular, we're going to first look at privacy in the context of a simple database.
+
+8
+00:00:20,790 --> 00:00:22,800
+I recognized fully that we're trying to learn about
+
+9
+00:00:22,800 --> 00:00:25,230
+privacy in the context of deep learning,
+
+10
+00:00:25,230 --> 00:00:27,750
+but to introduce the fundamental concepts of privacy,
+
+11
+00:00:27,750 --> 00:00:31,275
+it will be much clear to work with this toy database for now.
+
+12
+00:00:31,275 --> 00:00:34,454
+In particular, when I say a simple database,
+
+13
+00:00:34,454 --> 00:00:37,020
+I mean a database with a single column,
+
+14
+00:00:37,020 --> 00:00:39,225
+and one row for each person.
+
+15
+00:00:39,225 --> 00:00:42,240
+Let me show you with a short snippet of python code.
+
+16
+00:00:42,240 --> 00:00:43,855
+So as you see right there,
+
+17
+00:00:43,855 --> 00:00:47,720
+we have created a database which has 5,000 entries,
+
+18
+00:00:47,720 --> 00:00:49,925
+and these entries are just zero, one values.
+
+19
+00:00:49,925 --> 00:00:53,030
+So there's just a big list of zero, one numbers.
+
+20
+00:00:53,030 --> 00:00:55,115
+Even though this is just a list of zero, one numbers,
+
+21
+00:00:55,115 --> 00:00:58,700
+I want you to think about this as a big database with one column where
+
+22
+00:00:58,700 --> 00:01:02,540
+this zero or one corresponds to true or false.
+
+23
+00:01:02,540 --> 00:01:05,710
+So a one at a specific row means that a person,
+
+24
+00:01:05,710 --> 00:01:07,600
+say, for example at row five, or 10,
+
+25
+00:01:07,600 --> 00:01:09,795
+or 20, has a certain property,
+
+26
+00:01:09,795 --> 00:01:13,985
+and a zero means that that person does not have a certain property.
+
+27
+00:01:13,985 --> 00:01:17,420
+So for example, if this database we're regarding cancer,
+
+28
+00:01:17,420 --> 00:01:20,180
+a one might indicate that a person has cancer and
+
+29
+00:01:20,180 --> 00:01:23,165
+a zero might indicate that an individual does not have cancer.
+
+30
+00:01:23,165 --> 00:01:25,160
+What the actual property is,
+
+31
+00:01:25,160 --> 00:01:26,900
+we're not too concerned about at the moment.
+
+32
+00:01:26,900 --> 00:01:30,380
+We're just trying to say that if we have some private or sensitive property,
+
+33
+00:01:30,380 --> 00:01:31,670
+what are the tools and
+
+34
+00:01:31,670 --> 00:01:34,340
+techniques and the way we should think about these things in order to
+
+35
+00:01:34,340 --> 00:01:38,420
+protect the information while still performing our statistical study?
+
+36
+00:01:38,420 --> 00:01:42,265
+So how did we define privacy in the context of this example database?
+
+37
+00:01:42,265 --> 00:01:46,175
+Well, given that we're performing some query against the database,
+
+38
+00:01:46,175 --> 00:01:50,330
+if we remove a person from the database and the query doesn't change,
+
+39
+00:01:50,330 --> 00:01:53,260
+then that person's privacy would be fully protected.
+
+40
+00:01:53,260 --> 00:01:55,850
+In other words, if the query doesn't change
+
+41
+00:01:55,850 --> 00:01:58,370
+even we remove someone from the database,
+
+42
+00:01:58,370 --> 00:02:03,815
+then that person wasn't leaking any statistical information into the output of the query.
+
+43
+00:02:03,815 --> 00:02:08,670
+Now the big question, can we construct a query which
+
+44
+00:02:08,670 --> 00:02:14,005
+doesn't change no matter who we remove from the database?
+
+45
+00:02:14,005 --> 00:02:18,880
+In the next concept, we'll begin to explore this question in a simple python example.
+

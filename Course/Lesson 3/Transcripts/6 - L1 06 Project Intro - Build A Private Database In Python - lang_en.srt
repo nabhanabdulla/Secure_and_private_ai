@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:02,440
+So now to get a first intuition for this.
+
+2
+00:00:02,440 --> 00:00:05,310
+We're going to think about queries around the database.
+
+3
+00:00:05,310 --> 00:00:06,690
+So in this first project,
+
+4
+00:00:06,690 --> 00:00:09,810
+what I'd like for you to do is to write a sort of function,
+
+5
+00:00:09,810 --> 00:00:13,050
+that makes it so that you can take this database and create
+
+6
+00:00:13,050 --> 00:00:17,085
+5000 other databases each with one person missing.
+
+7
+00:00:17,085 --> 00:00:20,930
+So as you can imagine the first database should have the first person missing,
+
+8
+00:00:20,930 --> 00:00:23,515
+the second database, you have a second person missing et cetera.
+
+9
+00:00:23,515 --> 00:00:28,185
+So you should end up with 5000 databases of length 4,999.
+
+10
+00:00:28,185 --> 00:00:32,750
+Jump right in, and I'll be right back in a moment to show you how I construct this.
+

@@ -1,0 +1,152 @@
+Dropouts	
+Join Here!
+Our group would mostly focus on novel research and advancing the field of differential privacy and federated learning further. Our focus would be towards developing applied research techniques.	
+ 	 	
+Local Meet-ups
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Siddharth Srivastava	Siddharth Srivastava
+
+****************************************
+
+
+Computer Vision Buddies	
+Join Here!
+This group is aimed at working on Human Pose Estimation from 2D images. We will work on implementing this by reading literature about the work already done in this field. Even if we are not able to improve upon something, our baseline objective is to at least duplicate the results.	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+Prashant Goyal	Prashant Goyal
+
+****************************************
+
+
+
+
+Working solutions using GCP	
+Join Here!
+Use a cloud solution to deploy the course ideas.	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Frida Rode	@Frida
+
+****************************************
+
+
+FutureDevs	
+Join Here!
+An open minded group who want to take computer vision to the next level through various projects. The group will be a domain to discuss ideas, recent innovations and collabrate on projects	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Abdul Fathaah Shamsuddin	@Abdul Fathaah
+
+****************************************
+
+
+Implementation GURU	
+Join Here!
+We will be adding federated ml techniques to different machine learning problems, kaggle competitions, renowned papers and data sets.	
+ 	 	
+Local Meet-ups
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+Rana Tallal Javed	Rana Tallal
+
+****************************************
+
+
+
+
+INTRO (AI Challenge Study Group)	
+Join Here!
+The purpose is that all the members get related with Pytorch and DL in a crecent manner. To this end, during the first two weeks the group will propose the implementation of some shallow networks and attainable deep ones (vote-based selection). Then, the members of the group decide a bigger project to work in for 1,5 months until the end of the Secure and Private Challenge (the pool of projects is proposed by all the members during the previous weeks, being selected the one with most votes). I have already talked in Slack with 4 students interested on the group (@Rakshit Naidu @Mallikarjuna @Mursal Furqan @Manisha). I initially suggested as Final Project two options: one aims to develop a network to recognise and count small moving objects overlapping during recording (like bees), the second one focuses in using a physics simulator for applying reinforcement learning to a robot or humanoid. In the latter case, Rakshit talked about the aicrowd competition (https://www.aicrowd.com/challenges/neurips-2019-learn-to-move-walk-around) which is currently open to participation. Even though I think this last option is hardly achievable given the timeline, I see the project extremely interesting. Such a project can encourage people to take part in competitions by using real-case files and goals, as well as it will help to set our knowledge. Additionally, a team (or teams) could emerge that will take part in the 2020 edition.	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+José Luis Samper	J. Luis Samper
+
+****************************************
+
+
+
+droiders	
+Join Here!
+A study group geared towards deep learning and it's application in health and and agriculture	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Vincent Mugendi	@Droid
+
+****************************************
+
+
+PlanetEarth	
+Join Here!
+Our group welcomes anyone around the globe to join in deep-learning initiatives for climate change, clean energy, plastic alternatives, bio-fertilizers, oceanic pollution control, industrial-nuclear-sewer waste treatment, job-oriented education system, economical and practical alternatives for mobile towers, Green Buildings, Food Security etc	
+@Shudipto Trafder @Deepak @LauraT @Berenice @Sayed Maheen Basheer @Aniket Thomas @par @Nirupama Singh @Yuvraj	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Sayed Maheen Basheer	@Sayed Maheen Basheer
+
+****************************************
+
+Caffienated Coders	
+Join Here!
+Purpose: Working on Emotion Recognition Dataset Coding with Pytorch Exchanging ideas, help and suggestions with respect to the Challenge Course. Helping the beginners gain a certain level of mastery with the concepts.	
+@Shubhangi Jena @Nishant Bharat @Khush @Sayali Kutwal @⁨Aarthi Alagammai⁩ @Bharati Subramanian @Prateek Thakare	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Shubhangi Jena	Shubhangi Jena
+
+****************************************
+Applied Deep Learning	
+Join Here!
+The aim of the group together members sharing ideas in applying deep learning in real world that includes applying in Kaggle Competition, Making Projects and Writing Research paper. It also involves members collaborating together on a project.	
+Aniket Thomas, Harsh, Archit, Deepak Kumar, Halwai Aftab Hasan, Rakshit Naidu, Sankalp Dayal, Shubhendu Mishra, cibaca, Anshu Trivedi, Gabriela Urquieta , Akash Antony , souvikb1812, Elimu Michael, sourav kumar	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Aniket Thomas	Aniket Thomas
+****************************************
+
+
+DL Search	
+Join Here!
+This group will involve performing research on Computer Vision using deep neural networks. Members get to study related research papers and implement the proposed models with an overall goal of improving its accuracy. CNN architectures such as VGG16, AlexNet, ResNet, etc. will be implemented.	
+ 	 	
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+Priyabrata Biswas	@Priyabrata
+***************************************
+
+DLStarguys	
+Join Here!
+This group is for people starting out at Deep learning but don't wanna jump over to just to finish the coursework , the aim will be to understand the Maths behind every algorithm and go deep behind every concepts of deep learning as well as how differential privacy is helpful in maintaining privacy of data. Because Maths is most important and core to machine and deep learning. Also we will be preparing to start implementing research papers and then finally moving onto publishing our own research if we are able to do.	
+ 	 	
+Local Meet-ups
+Virtual Meet-ups
+Collaborative Projects
+Technical Discussions
+General Discussions ( Jobs/Events/Opportunities etc.)
+Sourav Kumar	@sourav kumar
+
+****************************************
+

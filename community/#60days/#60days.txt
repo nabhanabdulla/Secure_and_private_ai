@@ -1,0 +1,146 @@
+Day 13:
+1. _CNN_ lesson in :udacity:188 Intro to DL with PyTorch
+	- Completed the MNIST classification using MLP exercise 
+	- Wrote code for testing myself as practiced in the intro to pytorch lesson 
+	
+2. Matrix multiplication is one of the basic operations used in deep learning and it is vital to make these operations as efficient as possible. Started learning matrix multiplication algorithms - learnt the normal cubic time algorithm today
+
+Thanks for the encouragement @stark @alejandro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day 12:
+1. _CNN_ lesson in :udacity:188 Intro to DL with PyTorch
+    - Started off with some great appliications( nope motivation ) of CNN
+    - Went on to classifying the MNIST dataset with a MLP( Quick tip: The MNIST dataset is one of the most cited datasets )
+        I haven't completed the exercise but defined the network architecture(2-layer FC layers with relu activation and dropout regularization)
+        and performed training of the model
+
+2. Math for Machine learning: Linear Algebra on Coursera as decided in yesterday's meetup in #sg_dlstarguys
+    - The lessons are quite good and perfect for beginners
+    - Started off with an intuition and use of Linear algebra and Calculus in ML
+    - Attempted the quiz
+
+3. Watched how Whatsapp used ML for reducing spam
+https://developers.facebook.com/videos/f8-2017/how-whatsapp-reduced-spam-for-over-1-billion-people/
+
+Thanks @sourav kumar @Oudarjya Sen Sarma @Stark @Priyabrata@Michael Sheinman for the encouragement
+I want all of us to encourage
+@Asha who missed the #60daysofudacity due to her exams. Hope you did good in your exams and would like to let you know that all of us are here 24/7 :slightly_smiling_face: to help each other out. We just don't let anyone fail (not gonna happen in this community :muscle: )
+
+_Happy Learning Stay :udacity: ous_ :simple_smile: (edited) 
+3 files 
+
+
+
+
+
+
+Day 11:
+1. Attended first virtual meetup organised by @Aniket Mitra for our study group #sg_dlstarguys and discussed the plans and agenda.
+Thanks and big shoutout to all @Aniket Mitra @sourav kumar @Archit @Shanmugapriya @Shikhar Vaish @Aarthi Alagammai @Akshay Pal @Salomon @Fadillah Bilqis @Bhanu Prakash Uchula and others who are in #sg_dlstarguys
+
+2. Live Kahoot Quizzes on #l3_eval_privacy_func
+:heavy_check_mark:  Participated in Kahoot quiz via Hangout @Michael Sheinman @Agata
+:heavy_check_mark:  Participated in Kahoot quiz via Slack and came 2nd .
+        :arrow_right:  https://secureprivataischolar.slack.com/archives/CJSCX4WAZ/p1562505188155300
+
+3. Attended a webinar on language modelling - actually I watched only the first 45mins - it was kind of boring - but as the jupyter notebook used 	for explanation seemed good, I have asked @Sajjad Manal to send it over. Thanks @Sajjad Manal
+
+4. My project group @Seeratpal K. Jaura @Bhanujeet Choudhary had decided to collaborate on the Kaggle competition using Github. This is our github repo:
+https://github.com/nabhanabdulla/kaggle-aptos19-challenge
+
+Thanks @souvikb1812 for pointing out an error in the Trello board
+https://trello.com/b/0adjqXce/secure-and-private-ai-scholarship-challenge-community-events
+Thanks @sourav kumar @Oudarjya Sen Sarma  for the encouragement
+
+I want to encourage @Jeet who couldn't join #60daysofudacity due to his academic commitments. It's never late @Jeet and daily posts in #60daysofudacity gets us evaluation points and even if wasn't so just make optimal use of the community and try to help the community in whichever way you can. Don't forget to look at the wonderful *Study Groups*
+
+I also want to encourage @Ana to keep up the great effort she and her #reading_paper_discuss (aka papersdclub) is putting up :clapping:
+
+_Happy Learning Stay :udacity: ous_
+
+
+
+
+Day 10:
+1. Intro to DL with Pytorch(:udacity: 188) - Completed Lesson :three:
+    - Great interview with the Pytorch :pytorch: creator
+    - Goes on to explain the necessity that went on to develop Pytorch
+    - Explains why Pytorch stands apart (Hint: Takes the users into account)
+    - Future of Pytorch - new industries and research areas
+
+2. Neural Networks and Deep Learning(deeplearning.ai)
+    1. Exercise: Python :python: Basics with Numpy
+        - Implemented some basic core deep learning functions such as the softmax, sigmoid, dsigmoid, etc...
+
+        - Learnt how to handle data by normalizing inputs and reshaping images.
+
+        - Recognized the importance of vectorization.
+
+        - Understood how python broadcasting works.
+        
+    2. Programming Assignment: Logistic Regression with a NN mindset
+        - Worked with logistic regression in a way that built intuition relevant to neural networks.
+
+        - Learnt how to minimize the cost :dollar: function.
+
+        - Understood how derivatives of the cost are used to update parameters.
+        
+3. Zoom Meetup with @Shivam Raisharma @nabhanpv @Alejandro Galindo @Dharmendra Choudhary @Alejandro Galindo @Tyler Yang @Ricardo Pretelt @Ingus Terbets @Droid @Sadmi Bouhafs @souvikb1812 @Abhishek Tandon
+    - Discussed doubts from the :udacity: course lessons
+    - Went on to discuss real-world :world_map: scenarios for differential privacy and federated learning
+    - Shared project ideas
+    
+4. Hangout meetup with Kaggle project group @Bhanujeet Choudhary @Seeratpal K. Jaura
+    - Got to know each other :handshake:
+    - Discussed on possible technologies and platforms to use - decided to go on with GitHub for now and use other services like GCP for more collaboration as and when required
+    - Decided to meet bi-weekly and set deadline of a week for going through :udacity_badge: 188 Intro to DL with Pytorch CNN lesson and other CNN architecture
+    
+I would like to encourage
+@susyjam for continuing with #60daysofudacity - She is passionate  and is keen to share her knowledge with the community and we all will benefit from each other :handshake:
+@Michal Nawrot Keep up the good work, even though you had a short break from the course you are well enough to move forward as you're participating in #60daysofudacity
+
+_Happy Learning and Stay :udacity: ious_
+5 files 
+
+
+
+Day 9:
+Intro to DL with Pytorch(ud188) - Completed Lesson 2
+	1. Why to optimize?
+	2. Overfitting and underfitting
+		Early stopping - Stop learning(training) when the testing loss starts to increase
+		Regularization - Penalizing larger weights to avoid complex models
+		Dropout - Not using some nodes in each training epoch and hence ensuring each node gets _trained_ equally
+	3. Vanishing Gradients
+		Use better activation function
+	4. Local Minima
+		Random Restart - Try initializing weights with different random values
+	5. Batch and Stochastic GD
+		Instead of using all the data points in each training step, use a number of subsets and train 
+	6. Learning rate
+		Momemntum - Move in the weighted average direction of previous gradients with more weightage
+					given to the more recent gradients 
+
+Neural Networks and Deep Learning(deeplearning.ai)
+	1. Gradient descent on Logistic Regression
+	2. Coding gradient descent for logistic regression and vectorization
+		Using two for loops
+		Using one for loop
+		Fully vectorized logistic regression 
+	3. Logistic loss proof
+	4. Quiz Neural network basics (10/10)
+	
+	

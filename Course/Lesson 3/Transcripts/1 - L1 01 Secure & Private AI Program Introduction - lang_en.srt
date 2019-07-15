@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:02,835
+I'm Andrew Trask, the programs lead instructor.
+
+2
+00:00:02,835 --> 00:00:04,755
+I'm also the author of "Grokking Deep Learning".
+
+3
+00:00:04,755 --> 00:00:07,229
+I'm a researcher at Deep Mind and at Oxford University,
+
+4
+00:00:07,229 --> 00:00:10,605
+where I'm pursuing my PhD focused on deep learning and privacy.
+
+5
+00:00:10,605 --> 00:00:12,570
+I'm also the leader of open-mind.org,
+
+6
+00:00:12,570 --> 00:00:15,540
+an open-source community of over 3,000 AI researchers and
+
+7
+00:00:15,540 --> 00:00:19,170
+developers who are dedicated to building technology for safe AI.
+
+8
+00:00:19,170 --> 00:00:22,990
+Data privacy has been a very important concern for government and companies these days.
+
+9
+00:00:22,990 --> 00:00:25,320
+It gives rise to a very interesting challenge,
+
+10
+00:00:25,320 --> 00:00:26,790
+since on one hand,
+
+11
+00:00:26,790 --> 00:00:30,700
+we are pushing further and further for high-quality models and accessible data,
+
+12
+00:00:30,700 --> 00:00:32,070
+but on the other hand,
+
+13
+00:00:32,070 --> 00:00:36,135
+we need to keep data safe from both intentional and accidental leakage.
+
+14
+00:00:36,135 --> 00:00:38,570
+When doing artificial intelligence in the real world,
+
+15
+00:00:38,570 --> 00:00:43,160
+you'll find that most datasets are siloed within large enterprises for two reasons.
+
+16
+00:00:43,160 --> 00:00:46,490
+First, enterprises have a legal risk which
+
+17
+00:00:46,490 --> 00:00:50,540
+prevents them from wanting to share their data set outside of their organization.
+
+18
+00:00:50,540 --> 00:00:53,960
+Secondly, enterprises have a competitive advantage to
+
+19
+00:00:53,960 --> 00:00:57,425
+hang on to large datasets collected from or about their customers.
+
+20
+00:00:57,425 --> 00:01:00,125
+This leads to one very challenging consequence.
+
+21
+00:01:00,125 --> 00:01:03,440
+Scientists like us are often extremely constrained
+
+22
+00:01:03,440 --> 00:01:06,950
+in terms of the amount of data they have access to to solve their problems.
+
+23
+00:01:06,950 --> 00:01:09,560
+This challenge is quietly holding back research
+
+24
+00:01:09,560 --> 00:01:12,725
+across society and nearly every person facing industry,
+
+25
+00:01:12,725 --> 00:01:17,575
+making it more challenging to cure disease or understand complex societal trends.
+
+26
+00:01:17,575 --> 00:01:21,260
+The biggest tragedy of the situation is that the more personal to
+
+27
+00:01:21,260 --> 00:01:25,040
+data and the more personal the potential uses of that data in society,
+
+28
+00:01:25,040 --> 00:01:27,575
+the more restricted it is from scientists.
+
+29
+00:01:27,575 --> 00:01:28,940
+This means that some of
+
+30
+00:01:28,940 --> 00:01:31,710
+the most important and personal issues in
+
+31
+00:01:31,710 --> 00:01:34,850
+society simply cannot be addressed with machine learning,
+
+32
+00:01:34,850 --> 00:01:38,170
+because we do not have access to the proper training data.
+
+33
+00:01:38,170 --> 00:01:42,170
+But by learning how to do machine learning that protects privacy,
+
+34
+00:01:42,170 --> 00:01:45,830
+you can make a huge difference in humanity's ability to make progress,
+
+35
+00:01:45,830 --> 00:01:49,340
+curing disease, and truly understanding who we are through our data.
+
+36
+00:01:49,340 --> 00:01:52,730
+I will be teaching you state of the art techniques for privacy preserving
+
+37
+00:01:52,730 --> 00:01:56,000
+artificial intelligence such as Federate Learning and differential privacy,
+
+38
+00:01:56,000 --> 00:01:59,650
+so that you can get hands-on practice building your own private AI models.
+
+39
+00:01:59,650 --> 00:02:01,940
+I am super excited to go with you in this journey
+
+40
+00:02:01,940 --> 00:02:04,460
+and I hope you're as excited as I am. Let's get to it.
+
