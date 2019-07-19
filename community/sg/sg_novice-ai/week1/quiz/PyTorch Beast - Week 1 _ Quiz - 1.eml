@@ -1,0 +1,775 @@
+Delivered-To: nabhu123@gmail.com
+Received: by 2002:ac0:a9cc:0:0:0:0:0 with SMTP id i12csp3428354ima;
+        Sun, 14 Jul 2019 18:31:13 -0700 (PDT)
+X-Received: by 2002:a02:b395:: with SMTP id p21mr25201226jan.31.1563154273556;
+        Sun, 14 Jul 2019 18:31:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1563154273; cv=none;
+        d=google.com; s=arc-20160816;
+        b=n+6L/9/Yk5SYgPgYwx3w6WqRcQ5BClM6U7vEfVai4pgEB6koZOfP63uUYW8rLTHrRb
+         WFtBwJNxHn2dOoInkKzOVFJ9CMIsk7Mrn3Kgusu8mKZU1iMdEH6k9IpK6Txoel33ts0r
+         91wfEEiRAtl3MPxnaKqLgAxqHX8d+sSgkWfzN1Nv1VqWkl67LfCKlKB/iiVxeX5/IJ7W
+         gGv1zUVKZfgP/rLyJ+WOhSJj2YMWyJByrr8I2oCsAvToNl3oKWcTogIYZ8j1coS753fZ
+         pTIVHASNOnRu9bQt0ubvt+vkbQoXDOqAy0mO9o9KvyndqM48BQIZPtRT/epaNoie9CG/
+         iIFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=HA2wo7tV+7gb+lRrfeawNZ3zf2Zo2ydnYXS/VfhjVV4=;
+        b=qAGM9nmc2LHBEoRBJu2QgBhdliNSr2JlMQ9i1jY0QjAB+FrIYNt0NEm8oxRSedBbDH
+         NGuJTpYNrpXti7Wcj198z8w5EMbFF4qm02LEsPQtqoaT1nN0ZrZs+UtcGHn0h5B5nmKL
+         uhJwFGEw6G9Pi1w5QnwRqwFPqRAVHfWbfAK0H5iP/Tu+Tx3cHqq3e+EjLjTPpHtNbcfk
+         +yyXCzzL5rR6qVfeMsL2D9Voui3ceph8o9fNKbDv39B6Wygjd9niz8BS0x2PgUc7Nu8j
+         oOxjdF5Wb0uDHuvKTat3eMxlNPURkzHWmzQL7iNRrjvaG9gBmiZpslP8uPS3MMvHwA6j
+         lHHQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=QZOq1Uv7;
+       spf=pass (google.com: domain of 3yncrxrykck0sbezf-erprvcgf-abercyltbbtyr.pbzanouhopqtznvy.pbz@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3YNcrXRYKCK0SbeZf-eRPRVcgf-abeRcYlTbbTYR.PbZaNOUhopqTZNVY.PbZ@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3YNcrXRYKCK0SbeZf-eRPRVcgf-abeRcYlTbbTYR.PbZaNOUhopqTZNVY.PbZ@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id h43sor38629968jaa.11.2019.07.14.18.31.13
+        for <nabhu123@gmail.com>
+        (Google Transport Security);
+        Sun, 14 Jul 2019 18:31:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3yncrxrykck0sbezf-erprvcgf-abercyltbbtyr.pbzanouhopqtznvy.pbz@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=QZOq1Uv7;
+       spf=pass (google.com: domain of 3yncrxrykck0sbezf-erprvcgf-abercyltbbtyr.pbzanouhopqtznvy.pbz@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3YNcrXRYKCK0SbeZf-eRPRVcgf-abeRcYlTbbTYR.PbZaNOUhopqTZNVY.PbZ@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=HA2wo7tV+7gb+lRrfeawNZ3zf2Zo2ydnYXS/VfhjVV4=;
+        b=QZOq1Uv70XZMfEnIIw4c0c+rgWgMBldBPuY8aBNf/rNVtQKxCZoCW5Ly/DXgz5aKhX
+         HuvgPAFLhWIDSwLz/SZOtRF0a9G9nbRcySkCg6YsH9/z6lu/YTiX1VEgrCYGomm9tw99
+         d1zrx4XbfH4nv4Th6P9ExCOPEulwZrhtZ9tlkQtKANs2bsEYczIVaC0mufLpwVmYNHuW
+         XujP9xzKjxbDVddzUvu6vChCoWpWIKQSSl4BBFj+p6ZYgWJl/PR0qhf16LP0B7S9LOE6
+         80Ff91v4zqUnvB7HDzeuprSmxAbzCLydtQAZCySNU0fMp2W+xxnuab6JyMFuTjTJ7y4P
+         ZzmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=HA2wo7tV+7gb+lRrfeawNZ3zf2Zo2ydnYXS/VfhjVV4=;
+        b=qGzcSErL9ah1kN/qZ/rGVJC5acZZBqhi9G7kIlyDwLaNLHBm10Bnv0sDHoma+T0189
+         jylDrVjnln7dM2UfZ1G57UBqzE/wFf8uwtzFuknwYufw0Usc2jckKIbfiWKmSZdFAAv3
+         owbtlZvimQQ091C5uegJYSULMtc2JA9oyXw0l+3k4jtdK9+Dg//bR/4gKJMd2kd5h4m0
+         NWnpp41zcwTa0lV287cOL5aUcM74CqbTiKka8NyhNUtjbbZtGlgVcfDt8v/m3QuQjJBA
+         hTPD3J+DBH976f8DwInUBJqv6rr7XVsNyGyYOIPV6IMAfJI0cYyWBIZWW2rivezSxptf
+         Q5JA==
+X-Gm-Message-State: APjAAAWePQ2vl9HvatBaN+HkC5pVPFlfz3avBXsnRLLmQYpqISRqfV/X
+	Zt2g2BPQQOepugVMuO6ZrcK8VoMIDKO2GTQ4WLhsNw==
+X-Google-Smtp-Source: APXvYqzXGVn2t+Fa2TnzxFnk9UUo5fyMBl1/GVtsxjYGMJrzdZm6I1hy6xXDlDNdjMoBwkYDQJOnaJrZRB5MevfOZqi97A==
+MIME-Version: 1.0
+X-Received: by 2002:a02:a1c7:: with SMTP id o7mr26030177jah.26.1563154272898;
+ Sun, 14 Jul 2019 18:31:12 -0700 (PDT)
+Message-ID: <0000000000002a5ad4058dae370f@google.com>
+Date: Mon, 15 Jul 2019 01:31:12 +0000
+Subject: PyTorch Beast - Week 1 / Quiz - 1
+From: Google Forms <forms-receipts-noreply@google.com>
+To: nabhu123@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000002a5aaf058dae370c"
+
+--0000000000002a5aaf058dae370c
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Google Forms
+
+
+Thanks for filling out PyTorch Beast - Week 1 / Quiz - 1
+
+
+
+
+
+Here's what we got from you:
+
+
+
+
+PyTorch Beast - Week 1 / Quiz - 1
+
+This quiz will assess your understanding of the first two chapters of UD188  
+Introduction to PyTorch.
+Quiz will be divided in two sections. Best of luck to everybody:
+
+
+Email address *
+
+nabhu123@gmail.com
+
+
+If you feel at any point, you can explain the answer better in your  
+notebook then please feel free to do so. Click the image from your copy,  
+upload and attach a google drive link to the respective answer. :)
+
+
+Please mention your slack handle: *
+
+
+@nabhanpv
+
+
+Q1) Describe the problem of vanishing gradients with proper examples?
+
+
+In backpropogation, we go on mutliplying the local gradient with gradient  
+computed for the layers after it to get the gradient of a neuron wrt to the  
+loss. Due to lower slope(gradient) of functions like sigmoid, close to  
+higher values(1), the product get's very small and it takes more time to  
+train the neurons in a neural network as the update in each gradient  
+descent step will be very small. To combat vanishing gradients, activation  
+functions like ReLU are made use of as it has constant slope(when input >  
+0).
+
+
+Q2) Explain stochastic gradient descent?
+
+
+A special case of gradient descent where we use a single datapoint in a  
+gradient descent step. The idea is that if we randomly take datapoints from  
+the dataset in each iteration, it would be a good approximate and also much  
+faster compared to using all the datapoints in each gradient descent step
+
+
+Q3) Mention few differences between L1/L2 regularization?
+
+
+L1 regularization favors sparse weights while L2 favors dense weights. eg:  
+(1, 0) and (0.5, 0.5) are having the same L1 norm but (0.5, 0.5) has a  
+lesser L2 norm. L2 regularization penalizes differences more than L1 as  
+it's squaring the terms
+
+
+Q4) Write the pseudocode for gradient descent algorithm?
+
+
+1) dw = 0, db = 0 2) Find the gradient of the loss wrt w and b for all the  
+datapoints dw += gradient_loss_w db += gradient_loss_b * 3) Update weights  
+w -= learning_rate * dw b -= learning_rate * db 4) while max iterations not  
+reached goto 1
+
+
+Q5) Mention all the functions used to build a proper gradient descent  
+algorithm?
+
+
+np.dot(), while
+
+
+Q6) A gradient descent algorithm was called on the following curve depicted  
+in the picture. This figure rather shows the failure of gradient descent in  
+finding the global minima. Deduce a technique to overcome this situation?
+
+Captionless Image
+
+
+Give proper explanation:
+
+
+Randomly restart from
+
+
+Q7) A probability function represented as f(k) is dividing regions in such  
+a way that points which are red likely going to be red vice versa. What  
+would be the nature of the points describing the curve f(k)? What can you  
+conclude about the model? Is it a suspect to overfitting?
+
+Captionless Image
+
+
+Give your answer here:
+
+
+Q8) Find the total number of nodes in the input layer of an arbitrary  
+neural network having the dimensions of the output data, represented as  
+K=18? Justify your answer?
+
+
+324
+
+
+Q9) A perceptron has been defined according to the depicted logical circuit  
+having the inputs A and B, following a linear a combination as w1A + w2B +  
+bias. Deduce a truth table and hence find the values which will satisfy w1,  
+w2 and b?
+
+Captionless Image
+
+
+Calculate the proper values satisfying the truth table?
+
+
+NOR Gate
+
+
+Q10) "Points which are misclassified in a model has larger error values".  
+Why?
+
+
+To make the next step of training more focused on those points
+
+
+Q11) Justify the mentioned statement with proper eg:
+
+Captionless Image
+
+
+Give your answer here:
+
+
+Sigmoid function and softmax both outpus scores < 1. In case of softmax, it  
+can be used to get a probabilistic representation of multiple class scores  
+while sigmoid can be used only for two classes
+
+
+Numerical questions:
+
+This section will mostly carry questions based on calculation. Try your  
+best to come up with nearest estimates.
+
+
+Q12) A linear combination has been derived as w1 * 0.8 + w2 * 0.4 + b.  
+Given w1 = 4 , w2 = 2, b = -2.2. Calculate the final probability of the  
+linear combination? (Hint: Use sigmoid)
+
+
+0.858
+
+
+Q13) We have three boxes here and each of them may or may not have a cute  
+ring within them. The probability of having and not having a ring was  
+described below. Your task is to find the value of cross entropy for the  
+following?
+
+Captionless Image
+
+
+Place you answer here:
+
+
+0.423
+
+
+Q14) Calculate the sum of the squared residuals for the following graph?  
+Given that the learning rate = 0.01, intercept = 0 and slope = 0.68.
+
+
+Captionless Image
+
+3.835
+
+
+Q15) Given a neural network having a1,a2 as inputs, c1,c2 as outputs ,h1,  
+h2 nodes of hidden layer and b1,b2 as biases. The network has been  
+initialized with the values and weights given in the graph? Your task is to  
+perform 1 step of backpropagation and give the updated values for the  
+weight w5 and w6. (Assume Target Values t1=0.02/t2=0.98, Use MSE as a loss  
+function and Sigmoid as an activation function. Assume learning rate = 0.2)
+
+
+Captionless Image
+
+w5:0.324 w6:0.371
+
+
+Create your own Google Form
+
+
+
+--0000000000002a5aaf058dae370c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(117,113,8);" width=
+=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pad=
+ding-left: 24px"><img alt=3D"Google Forms" height=3D"26px" style=3D"display=
+: inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"=
+https://www.gstatic.com/docs/forms/google_forms_logo_lockup_white_2x.png"><=
+/td></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(=
+241,241,230)"><div align=3D"center" style=3D"background-color: #fff; border=
+-bottom: 1px solid #e0e0e0; margin: 0 auto; max-width: 624px; min-width: 15=
+4px; padding: 0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"background-color: #fff;" width=3D"100%" role=3D"presentati=
+on"><tbody><tr height=3D"24px"><td></td></tr><tr><td><div style=3D"font-siz=
+e: 13px; line-height: 18px; color: #424242; font-weight: 700">Thanks for fi=
+lling out <a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSe7EObQ6pIvrI=
+kcXeDvB2x-fzY28SjEWdS4xvyVUmYunNJIYQ/viewform?usp=3Dmail_form_link">PyTorch=
+ Beast - Week 1 / Quiz - 1</a></div></td></tr><tr height=3D"12px"></tr><tr>=
+<td><div style=3D"font-size: 13px; line-height: 18px; color: #424242;">Here=
+'s what we got from you:</div></td></tr><tr><td><div class=3D"ss-form-conta=
+iner" style=3D""><div class=3D"ss-form-heading" style=3D""><h1 class=3D"ss-=
+form-title" dir=3D"ltr" style=3D"margin:.67em 0;">PyTorch Beast - Week 1 / =
+Quiz - 1</h1>
+<div class=3D"ss-form-desc ss-no-ignore-whitespace" style=3D"font:inherit;w=
+idth:99%;margin:0 0 1em;white-space:pre-wrap;word-wrap:break-word;">This qu=
+iz will assess your understanding of the first two chapters of UD188 Introd=
+uction to PyTorch. <br>Quiz will be divided in two sections. Best of luck t=
+o everybody:</div>
+</div>
+<div class=3D"ss-form" style=3D""><form action=3D"" method=3D"GET" id=3D"ss=
+-form" style=3D""><br>
+<div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-text" style=3D"margi=
+n:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertic=
+al-align:middle;margin-left:0;margin-top:0;max-width:100%;"><label class=3D=
+"ss-q-item-label" for=3D"emailAddress" style=3D""><div class=3D"ss-q-title"=
+ style=3D"display:block;font-weight:bold;margin-top:.83em;margin-bottom:.83=
+em;">Email address
+<label for=3D"emailAddress" aria-label=3D"(Required field)" style=3D""></la=
+bel>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div></label>
+<div class=3D"ss-q-text ss-printable-text-line" dir=3D"auto" style=3D"backg=
+round-color:#eee;max-width:90%;border:1px solid #c0c0c0;padding:5px;white-s=
+pace:pre-wrap;color:#545454;width:70%;">nabhu123@gmail.com</div>
+
+
+</div></div></div>
+<div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-section-header" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<h2 class=3D"ss-section-title" style=3D"background-color:#eee;padding:0.4em=
+;margin:2em -0.4em 0;">If you feel at any point, you can explain the answer=
+ better in your notebook then please feel free to do so. Click the image fr=
+om your copy, upload and attach a google drive link to the respective answe=
+r. :)</h2>
+<div class=3D"ss-section-description ss-no-ignore-whitespace" style=3D"marg=
+in-top:0.5em;white-space:pre-wrap;word-wrap:break-word;"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-text" style=3D"margi=
+n:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertic=
+al-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_870282496" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Please mention your slack handle:
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(Required field)" s=
+tyle=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">@nabhanpv</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_366340186" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Q1) Describe the problem of vanishing gradients with=
+ proper examples?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">In backpropogation, we go on mutliplying the local gradien=
+t with gradient computed for the layers after it to get the gradient of a n=
+euron w.r.t to the loss. Due to lower slope(gradient) of functions like sig=
+moid, close to higher values(1),  the product get&#39;s very small and it t=
+akes more time to train the neurons in a neural network as the update in ea=
+ch gradient descent step will be very small.
+
+To combat vanishing gradients, activation functions like ReLU are made use =
+of as it has constant slope(when input &gt; 0). </div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_772106738" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Q2) Explain stochastic gradient descent?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">A special case of gradient descent where we use a single d=
+atapoint in a gradient descent step. The idea is that if we randomly take d=
+atapoints from the dataset in each iteration, it would be a good approximat=
+e and also much faster compared to using all the datapoints in each gradien=
+t descent step</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1281573323" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q3) Mention few differences between L1/L2 regulariz=
+ation?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">L1 regularization favors sparse weights while L2 favors de=
+nse weights. eg: (1, 0) and (0.5, 0.5) are having the same L1 norm but (0.5=
+, 0.5) has a lesser L2 norm.
+
+L2 regularization penalizes differences more than L1 as it&#39;s squaring t=
+he terms</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_583906659" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Q4) Write the pseudocode for gradient descent algori=
+thm?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">1) dw =3D 0, db =3D 0
+2) Find the gradient of the loss w.r.t  w and b for all the datapoints
+       dw +=3D gradient_loss_w=20
+       db +=3D gradient_loss_b *
+3) Update weights
+       w -=3D learning_rate * dw
+       b -=3D learning_rate * db
+4) while max iterations not reached goto 1</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_8453044" style=3D""><div clas=
+s=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em;m=
+argin-bottom:.83em;">Q5) Mention all the functions used to build a proper g=
+radient descent algorithm?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">np.dot(), while</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-embeddable-object-container" style=
+=3D"margin:12px 0;max-width:100%;position:relative;"><div class=3D"ss-form-=
+entry" style=3D"margin-bottom:1.5em;vertical-align:middle;margin-left:0;mar=
+gin-top:0;max-width:100%;">
+<h2 class=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top=
+:.83em;margin-bottom:.83em;">Q6) A gradient descent algorithm was called on=
+ the following curve depicted in the picture. This figure rather shows the =
+failure of gradient descent in finding the global minima. Deduce a techniqu=
+e to overcome this situation?</h2>
+<div style=3D"text-align: left;"><img class=3D"ss-image" title=3D"" src=3D"=
+https://lh3.googleusercontent.com/b4dS8Y5mOqyDKF_l3YW9J-Ff7TsVw0eQBAZikdlCx=
+U5O4PlBSwgbiiez2MFVLsZpi_y7gy7URQ" style=3D"width: 624px;outline:none;" alt=
+=3D"Captionless Image"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_793315425" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Give proper explanation:
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">Randomly restart from</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-embeddable-object-container" style=
+=3D"margin:12px 0;max-width:100%;position:relative;"><div class=3D"ss-form-=
+entry" style=3D"margin-bottom:1.5em;vertical-align:middle;margin-left:0;mar=
+gin-top:0;max-width:100%;">
+<h2 class=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top=
+:.83em;margin-bottom:.83em;">Q7) A probability function represented as f(k)=
+ is dividing regions in such a way that points which are red likely going t=
+o be red vice versa. What would be the nature of the points describing the =
+curve f(k)? What can you conclude about the model? Is it a suspect to overf=
+itting?</h2>
+<div style=3D"text-align: left;"><img class=3D"ss-image" title=3D"" src=3D"=
+https://lh5.googleusercontent.com/rBDv7LJF_-oPfC525r70ZoBghBW5nIoBiVWSL_Kwf=
+cN8hIAC0WOvSbQlLITh7xgrk91yN7_AvQ" style=3D"width: 624px;outline:none;" alt=
+=3D"Captionless Image"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_2060020591" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Give your answer here:
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;"></div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1920893136" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q8) Find the total number of nodes in the input lay=
+er of an arbitrary neural network having the dimensions of the output data,=
+ represented as K=3D18? Justify your answer?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">324</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-embeddable-object-container" style=
+=3D"margin:12px 0;max-width:100%;position:relative;"><div class=3D"ss-form-=
+entry" style=3D"margin-bottom:1.5em;vertical-align:middle;margin-left:0;mar=
+gin-top:0;max-width:100%;">
+<h2 class=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top=
+:.83em;margin-bottom:.83em;">Q9) A perceptron has been defined according to=
+ the depicted logical circuit having the inputs A and B, following a linear=
+ a combination as w1A + w2B + bias. Deduce a truth table and hence find the=
+ values which will satisfy w1, w2 and b?</h2>
+<div style=3D"text-align: left;"><img class=3D"ss-image" title=3D"" src=3D"=
+https://lh4.googleusercontent.com/aiSC8IUW8cCWfbJhKFO41GCT0qp8AmD4DOKqJZo9y=
+jWZHQ-1ZEKATVbFXYbf8fnrw9ZiUIcHlg" style=3D"width: 624px;outline:none;" alt=
+=3D"Captionless Image"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_241075254" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Calculate the proper values satisfying the truth tab=
+le?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">NOR Gate</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1638238506" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q10) &quot;Points which are misclassified in a mode=
+l has larger error values&quot;. Why?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">To make the next step of training more focused on those po=
+ints</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-embeddable-object-container" style=
+=3D"margin:12px 0;max-width:100%;position:relative;"><div class=3D"ss-form-=
+entry" style=3D"margin-bottom:1.5em;vertical-align:middle;margin-left:0;mar=
+gin-top:0;max-width:100%;">
+<h2 class=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top=
+:.83em;margin-bottom:.83em;">Q11) Justify the mentioned statement with prop=
+er eg:</h2>
+<div style=3D"text-align: left;"><img class=3D"ss-image" title=3D"" src=3D"=
+https://lh5.googleusercontent.com/npfKTOkXJ3pBD5rTozZ8JqXfc7rlsQ7uo_bjFR2Mz=
+kbaZ05Ccw0Fd-IRM2av9vbGfTtiOrib_w" style=3D"width: 624px;outline:none;" alt=
+=3D"Captionless Image"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1336565557" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Give your answer here:
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">Sigmoid function and softmax both outpus scores &lt; 1. In=
+ case of softmax, it can be used to get a probabilistic representation of m=
+ultiple class scores while sigmoid can be used only for two classes</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-page-break" style=3D"margin:12px 0;"=
+><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:m=
+iddle;margin-left:0;margin-top:0;max-width:100%;">
+<h2 class=3D"ss-page-title" style=3D"margin:2em -0.4em 0;padding:0.4em;back=
+ground-color:#eee;">Numerical questions:</h2>
+<div class=3D"ss-page-description ss-no-ignore-whitespace" dir=3D"auto" sty=
+le=3D"white-space:pre-wrap;word-wrap:break-word;">This section will mostly =
+carry questions based on calculation. Try your best to come up with nearest=
+ estimates.</div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1900591366" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q12) A linear combination has been derived as w1 * =
+0.8 + w2 * 0.4 + b. Given w1 =3D 4 , w2 =3D 2, b =3D -2.2. Calculate the fi=
+nal probability of the linear combination? (Hint: Use sigmoid)
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">0.858</div>
+
+
+</div></div></div>
+<br> <div class=3D"errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-embeddable-object-container" style=
+=3D"margin:12px 0;max-width:100%;position:relative;"><div class=3D"ss-form-=
+entry" style=3D"margin-bottom:1.5em;vertical-align:middle;margin-left:0;mar=
+gin-top:0;max-width:100%;">
+<h2 class=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top=
+:.83em;margin-bottom:.83em;">Q13) We have three boxes here and each of them=
+ may or may not have a cute ring within them. The probability of having and=
+ not having a ring was described below. Your task is to find the value of c=
+ross entropy for the following?</h2>
+<div style=3D"text-align: left;"><img class=3D"ss-image" title=3D"" src=3D"=
+https://lh6.googleusercontent.com/5Wg5b23Krtx56RF8isujBCqQNHKEMV1AYc_3wydnw=
+Gp3ZHFdEyj4Ge5CJTec7VCh4gIc0N58Bg" style=3D"width: 434px;outline:none;" alt=
+=3D"Captionless Image"></div>
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_505385723" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Place you answer here:
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">0.423</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-text" style=3D"margin:12px 0;"><div =
+class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle;=
+margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1241967873" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q14) Calculate the sum of the squared residuals for=
+ the following graph? Given that the learning rate =3D 0.01, intercept =3D =
+0 and slope =3D 0.68.
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+<div style=3D"text-align: left;"><img class=3D"ss-inline-image" title=3D"" =
+src=3D"https://lh5.googleusercontent.com/Io8HngWmgsjeqAN8HdzlshQQHleipCXISE=
+ZDlAfiS0oChJ_n3cEA0KzZSMHHsAv6fDYLPbjJHA" style=3D"width: 607px;" alt=3D"Ca=
+ptionless Image"></div>
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">3.835</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1413947701" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Q15) Given a neural network having a1,a2 as inputs,=
+ c1,c2 as outputs ,h1, h2 nodes of hidden layer and b1,b2 as biases. The ne=
+twork has been initialized with the values and weights given in the graph? =
+Your task is to perform 1 step of backpropagation and give the updated valu=
+es for the weight w5 and w6. (Assume Target Values t1=3D0.02/t2=3D0.98, Use=
+ MSE as a loss function and Sigmoid as an activation function. Assume learn=
+ing rate =3D 0.2)=20
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+<div style=3D"text-align: left;"><img class=3D"ss-inline-image" title=3D"" =
+src=3D"https://lh5.googleusercontent.com/TxfaejDZ4C1x5DCz8T_kPGDZaH-cWv5gon=
+RIeDfNJEeqcZZEX-CKajkifliEwH0uTcB53g6xfQ" style=3D"width: 624px;" alt=3D"Ca=
+ptionless Image"></div>
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">w5:0.324	w6:0.371</div>
+
+
+</div></div></div>
+<br></form></div></div></td></tr><tr height=3D"24px"></tr></tbody></table><=
+/div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"m=
+ax-width: 672px; min-width: 154px;" width=3D"100%" role=3D"presentation"><t=
+body><tr height=3D"24px"><td></td></tr><tr><td><a href=3D"https://docs.goog=
+le.com/forms?usp=3Dmail_form_link" style=3D"color: #424242; font-size: 13px=
+;">Create your own Google Form</a></td></tr></tbody></table></div></body></=
+html>
+--0000000000002a5aaf058dae370c--
