@@ -4,4 +4,4 @@ Thanks Bharati Subramanian for the contributions.
 
 See the Trello board [here](https://trello.com/b/0adjqXce/secure-and-private-ai-scholarship-challenge-community-events)
 
-<img src="trello/img/screenshot.png">
+<img src="img/screenshot.png">
